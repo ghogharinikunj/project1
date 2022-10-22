@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+        <div class="container">
+            <h4>Profile data</h4>
+            <div class="div">
+                <ul>
+                    <li>NAME : <%= user.name%></li>
+                    <li>Email ID : <%= user.email%></li>
+                    <li>USERNAME : <%= user.username%></li>
+                    <li>PASSOWRD : <%= user.password%></li>
+                </ul>
+            </div>
+            <button><a href="/updatedata">update account</a>  </button>
+            <button><a href="/deleteaccount/<%= user._id%>">delete account</a> </button>
+            <% if(user.role) { %>
+                <button><a href="/allUserData">all users data</a>  </button>
+            <% } %>
+        </div>
+</div>
+</body>
+</html>

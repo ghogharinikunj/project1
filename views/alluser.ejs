@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            justify-content: center;
+            display: flex;
+            margin-top: 5%;
+            align-items: center;
+        }
+        .main{
+            justify-content: center;
+        }
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid black;
+            width: 250px;
+            height: 35px;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./nav.ejs') %>
+    <h2 align="center"> All User Data</h2>
+    <div class="container">
+        <div class="main">
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>delete </th>
+                </tr>
+                <% data.forEach((e) =>{ %>
+                <tr>
+
+                    <td><%= e.name %></td>
+                    <td><%= e.email %></td>
+                    <td><%= e.username %></td>
+                    <td><a style="text-decoration:none; color:black" href="/deleteaccount/<%= e._id%>">delete this account </a></td>
+                </tr>
+                <% }) %>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
